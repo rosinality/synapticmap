@@ -8,6 +8,7 @@ function NodeClick() {
 	}
 	jsPlumb.setDraggable(parent, false);
 	$(this).attr('contenteditable', 'true');
+	parent.children('.remove-button').removeClass('hide');
 	parent.children('.ui-resizable-handle').removeClass('hide');
 	parent.css({ border: '1px dashed #fff' });
 }
@@ -17,6 +18,7 @@ function NodeBlur() {
 	$(this).attr('contenteditable', 'false');
 	parent.children('.ui-resizable-handle').addClass('hide');
 	parent.css({ border: '1px solid #989898' });
+	parent.children('.remove-button').addClass('hide');
 }
 function NodeKeydown(event) {
 	var keyCode = event.keyCode || event.which;
@@ -36,6 +38,10 @@ function NodeKeydown(event) {
 	} else if (keyCode == 27) {
 		$(this).blur();
 	}
+}
+function RemoveNode(id) {
+	jsPlumb.detachAllConnections(id);
+	$('#' + id).remove();
 }
 function AddNode (X, Y, Text = '') {
 	var templateNode = $('#Template').clone();
@@ -245,6 +251,15 @@ $(function () {
 			break;
 		}
 	});
+
+	$('.remove-button').mousedown(function () {
+		if (!confirm('Do you really want to remove this node?')) {
+			return;
+		}
+
+		var parent = $(this).parent();
+		RemoveNode(parent.attr('id'));
+	})
 
 	$('#save-dialog').dialog({
 		autoOpen: false,

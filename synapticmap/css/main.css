@@ -40,6 +40,16 @@ div {
 /*	box-shadow: 0px 0px 1px 1px rgba(152, 152, 152, .75); */
 }
 
+.remove-button {
+	left: -3px;
+	cursor: pointer;
+	position: absolute;
+	background-color: transparent !important;
+	border: 0 !important;
+	background-image: url(bootstrap/images/ui-icons_888888_256x240.png) !important;
+	top: -3px;
+}
+
 #menu {
 	width: 130px;
 	font-size: 8pt;
