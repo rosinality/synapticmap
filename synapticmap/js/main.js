@@ -43,7 +43,7 @@ function RemoveNode(id) {
 	jsPlumb.detachAllConnections(id);
 	$('#' + id).remove();
 }
-function AddNode (X, Y, Text = '') {
+function AddNode (X, Y, Text) {
 	var templateNode = $('#Template').clone();
 	templateNode.removeClass('hide');
 	templateNode.css({ left: X, top: Y });
