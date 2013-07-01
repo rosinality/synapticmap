@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Neuromap</title>
+	<base heref="/">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/bootstrap/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="js/jquery.jsPlumb-1.4.1-all-min.js"></script>
+	<script src="js/FileSaver.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<ul id="menu">
+		<li><a href="#" onclick="SaveDialog()"><span class="ui-icon ui-icon-disk"></span>Save</a></li>
+		<li><a href="#" onclick="LoadDialog()"><span class="ui-icon ui-icon-folder-open"></span>Load</a></li>
+		<li><a href="#" onclick="Clear()"><span class="ui-icon ui-icon-document
+ "></span>Clear</a></li>
+ 		<li>
+ 			<a href="#">Global layout</a>
+ 			<ul class="submenu">
+ 				<li><a href="#" onclick="SetGlobalLayout('Straight')">Straight</a></li>
+ 				<li><a href="#" onclick="SetGlobalLayout('Flowchart')">Flowchart</a></li>
+ 				<li><a href="#" onclick="SetGlobalLayout('Bezier')">StateMachine</a></li>
+ 			</ul>
+ 		</li>
+	</ul>
+	<div id="save-dialog" title="Save map data">
+		File name <input type="text" name="save-filename" id="save-filename" class="text ui-widget-content ui-corner-all">
+	</div>
+	<input type="file" id="openfile" class="hide">
+
+	<div id="Template" class="node hide">
+		<div class="nodetext">
+		</div>
+		<div class="linkbar">
+		</div>
+	</div>
+</body>
+</html>
