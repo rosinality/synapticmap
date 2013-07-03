@@ -28,10 +28,18 @@
  		</li>
 	</ul>
 	<div id="save-dialog" title="Save map data">
-		File name <input type="text" name="save-filename" id="save-filename" class="text ui-widget-content ui-corner-all">
+		<input type="text" name="save-filename" id="save-filename" class="text ui-widget-content ui-corner-all" placeholder="File name">
 	</div>
 	<input type="file" id="openfile" class="hide">
-
+	<div id="connector-formatter" class="ui-widget-content hide formatter">
+		<p class="formatter">
+			<input type="text" id="label-text" class="text formatter" placeholder="Label text">
+		</p>
+		<p class="formatter">
+			<label class="checkbox formatter"><input type="checkbox" id="arrow-source" class="formatter">Source</label>
+			<label class="checkbox formatter"><input type="checkbox" id="arrow-target" class="formatter">Target</label>
+		</p>
+	</div>
 	<div id="Template" class="node hide">
 		<div id="remove" class="ui-icon ui-state-default ui-icon-close remove-button hide">
 		</div>
